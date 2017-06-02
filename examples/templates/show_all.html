@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>All Items</h2>
+  <form action="{{ url_for('update_done') }}" method=post>
+    <table class=todos>
+      <tr>
+        <th>序列号
+        <th>商品名称
+        <th>商品长名称
+        <th>市场价
+        <th>销售价
+{#        <th>上架状态#}
+{#        <th>成本价#}
+{#        <th>创建时间#}
+{#        <th>修改时间#}
+{#        <th>删除状态#}
+{#        <th>排序#}
+{#        <th>保质期#}
+{#        <th>预估保质期#}
+{#        <th>商品图片1#}
+{#        <th>商品图片2#}
+{#        <th>商品图片3#}
+{#        <th>单位#}
+{#        <th>商品所在国家#}
+
+      {%- for todo in todos %}
+      <tr class=title>
+        <td>{{ todo.id }}
+        <td>{{ todo.name }}
+        <td>{{ todo.long_name }}
+        <td>{{ todo.market_price }}
+        <td>{{ todo.sell_price }}
+{#        <td>{{ todo.is_online }}#}
+{#        <td>{{ todo.cost_price }}#}
+{#        <td>{{ todo.gmt_created.strftime('%Y-%m-%d %H:%M') }}#}
+{#        <td>{{ todo.gmt_modified.strftime('%Y-%m-%d %H:%M') }}#}
+{#        <td>{{ todo.deleted }}#}
+{#        <td>{{ todo.sort }}#}
+{#        <td>{{ todo.shelf_life }}#}
+{#        <td>{{ todo.pre_shelf_life }}#}
+{#        <td>{{ todo.product_img1 }}#}
+{#        <td>{{ todo.product_img2 }}#}
+{#        <td>{{ todo.product_img3 }}#}
+{#        <td>{{ todo.product_img4 }}#}
+{#        <td>{{ todo.unit }}#}
+{#        <td>{{ todo.country }}#}
+
+
+
+        <td><input type=checkbox name=done.{{ todo.id }}{{ " checked" if todo.done }}>
+      <tr class=text>
+        <td colspan=3>{{ todo.text }}</td>
+      {%- endfor %}
+    </table>
+    <p>
+      <input type=submit value="Update">
+      <a href="{{ url_for('new') }}">New item</a>
+  </form>
+{% endblock %}

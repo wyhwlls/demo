@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>New Todo Item</h2>
+  <form action="" method=post>
+    <p>
+      商品:
+      <input type=text name=id value="{{ request.form.id }}">
+    <p>
+      商品名称:
+      <input type=text name=name value="{{ request.form.name }}">
+    <p>
+      商品长名称:
+      <input type=text name=long_name value="{{ request.form.long_name }}">
+    <p>
+      市场价:
+      <input type=text name=market_price value="{{ request.form.market_price }}">
+    <p>
+      销售价:
+      <input type=text name=sell_price value="{{ request.form.sell_price }}">
+{#    <p>#}
+{#      上架状态:#}
+{#      <input type=text name=is_online value="{{ request.form.is_online }}">#}
+{#    <p>#}
+{#      成本价:#}
+{#      <input type=text name=cost_price value="{{ request.form.cost_price }}">#}
+{#    <p>#}
+{#      创建时间:#}
+{#      <input type=text name=gmt_created value="{{ request.form.gmt_created }}">#}
+{#    <p>#}
+{#      修改时间:#}
+{#      <input type=text name=gmt_modified value="{{ request.form.gmt_modified }}">#}
+{#    <p>#}
+{#      删除状态:#}
+{#      <input type=text name=deleted value="{{ request.form.deleted }}">#}
+{#    <p>#}
+{#      排序:#}
+{#      <input type=text name=sort value="{{ request.form.sort }}">#}
+{#    <p>#}
+{#      保质期:#}
+{#      <input type=text name=shelf_life value="{{ request.form.shelf_life }}">#}
+{#    <p>#}
+{#      预估保质期:#}
+{#      <input type=text name=pre_shelf_life value="{{ request.form.pre_shelf_life }}">#}
+{#    <p>#}
+{#      商品图片1:#}
+{#      <input type=text name=product_img1 value="{{ request.form.product_img1 }}">#}
+{#    <p>#}
+{#      商品图片2:#}
+{#      <input type=text name=product_img2 value="{{ request.form.product_img2 }}">#}
+{#    <p>#}
+{#      商品图片3:#}
+{#      <input type=text name=product_img3 value="{{ request.form.product_img3 }}">#}
+{#    <p>#}
+{#      商品图片3:#}
+{#      <input type=text name=product_img4 value="{{ request.form.product_img4 }}">#}
+{#    <p>#}
+{#      单位:#}
+{#      <input type=text name=unit value="{{ request.form.unit }}">#}
+{#    <p>#}
+{#      商品所在国家:#}
+{#      <input type=text name=country value="{{ request.form.country }}">#}
+
+
+{#    <p>Text:#}
+{#    <p><textarea name=text rows=10 cols=40>{{ request.form.text }}</textarea>#}
+{#      #}
+
+
+
+    <p>
+      <input type=submit value="Create entry">
+      <a href="{{ url_for('show_all') }}">Back to list</a>
+  </form>
+{% endblock %}
